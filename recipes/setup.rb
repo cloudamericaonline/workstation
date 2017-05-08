@@ -1,5 +1,10 @@
 file '/etc/motd' do
-  content 'This is property of Sandipan'
+  content "This is property of Sandipan
+  Hostname: #{node['hostname']}
+  IPAddress: #{node['ipaddress']}
+  CPU: #{node['cpu']['0']['mhz']}
+  Memory: #{node['memory']['total']}
+  "
   mode '0755'
   owner 'root'
   group 'root'
